@@ -1,0 +1,23 @@
+<h1>course Update</h1>
+<div *ngIf ='cor'> 
+  <span>{{cor.id}}</span>
+  <span>{{cor.title}}</span>
+  <div> 
+     <label>
+          id:
+      </label>
+      <input type="text" ngModel ="cor.id"/>
+      <label>userId:</label>
+      <input type="text" ngModel ="cor.userId"/>
+      <label>CourseName:</label>
+      <input type="text" ngModel ="cor.title"/> 
+      <label>descripation:</label>
+      <input type="text" ngModel ="cor.body"/> 
+  </div>
+  <button (click) = 'save()'>save</button>
+  <button (click) = 'goBack()'>goBack</button> 
+
+   
+</div>
+
+

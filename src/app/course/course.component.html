@@ -1,0 +1,51 @@
+<!-- <label>
+  id:
+</label>
+<input type="text" #courseId/>
+<label>userId:</label>
+<input type="text" #courseUserId/>
+<label>CourseName:</label>
+<input type="text" #courseName/> 
+<label>descripation:</label>
+<input type="text" #courseDes/> 
+<button (click)='btnAddcourse(courseId.value,courseUserId.value,courseName.value,courseDes.value)'>Add</button>-->
+<form #addForm = "ngForm" (ngSubmit) = "btnAddcourse(addForm)">
+    <label>
+      id:
+    </label>
+    <input type="text" name="id" ngModel/>
+    <label>userId:</label>
+    <input type="text" name="coursename" required minlength="10"  #name= 'ngModel' ngModel/>
+    <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.required'>u have to fill the name</span> -->
+    <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.minlength'>the name must be grater than 10</span> -->
+    <label>CourseName:</label>
+    <input type="text" name="coursePrice" ngModel/> 
+    <label>descripation:</label>
+    <input type="text" name="descripation" ngModel/>
+    <button type="submit">Add</button> 
+  </form>
+<table> 
+ 
+  <tr>
+    <th>course id</th>
+    <th>course name</th>
+    <th>course deatils</th>
+    <th>course image</th>
+    <th>update</th>
+    <th>delete</th> 
+  </tr>
+  <tr *ngFor = 'let item of arrayOfCourse'>
+    <td>{{item.id}}</td>
+    <td>{{item.coursename}}</td>
+    <td>{{item.coursePrice}}</td>
+    <td>{{item.descripation}}</td>
+    <td><a  routerLink = '/corUpdate/{{item.id}}'
+      (click)="btnUpdateCourse(corItem,courseId.value,courseUserId.value,courseName.value,courseDes.value)">update
+    </a>
+    </td>
+    <td><button  title="delete course"
+      (click)="btnDeleteCourse(item)">x</button></td> 
+  </tr>
+  
+
+</table>
