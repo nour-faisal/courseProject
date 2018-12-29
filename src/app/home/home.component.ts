@@ -9,7 +9,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   animations:[
-    trigger('inas' ,[
+    trigger('fadIn' ,[
       transition('void=>*',[
         style({
           opacity:0,
