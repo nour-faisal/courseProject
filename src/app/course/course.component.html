@@ -9,22 +9,61 @@
 <label>descripation:</label>
 <input type="text" #courseDes/> 
 <button (click)='btnAddcourse(courseId.value,courseUserId.value,courseName.value,courseDes.value)'>Add</button>-->
-<form #addForm = "ngForm" (ngSubmit) = "btnAddcourse(addForm)">
+<!-- <form #addForm = "ngForm" (ngSubmit) = "btnAddcourse(addForm)">
     <label>
       id:
     </label>
     <input type="text" name="id" ngModel/>
     <label>userId:</label>
-    <input type="text" name="coursename" required minlength="10"  #name= 'ngModel' ngModel/>
+    <input type="text" name="coursename" #name= 'ngModel' ngModel/>
     <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.required'>u have to fill the name</span> -->
     <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.minlength'>the name must be grater than 10</span> -->
-    <label>CourseName:</label>
+    <!-- <label>CourseName:</label>
     <input type="text" name="coursePrice" ngModel/> 
     <label>descripation:</label>
     <input type="text" name="descripation" ngModel/>
     <button type="submit">Add</button> 
-  </form>
-<table> 
+  </form> --> 
+  <div [hidden]="submitted">
+    <form #addForm = "ngForm" (ngSubmit) = "btnAddcourse(addForm)">
+      <div class="form-row" >
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">Course name</label>
+          <input type="text" class="form-control" id="validationDefault01" name="coursename" 
+          #coursename= 'ngModel' ngModel required>
+          
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">Course price</label>
+          <input type="text" class="form-control" id="validationDefault02"
+           name="coursePrice" #coursePrice = 'ngModel' ngModel required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">descripation</label>
+          <input type="text" class="form-control" id="validationDefault02"
+           name="descripation" #descripation = 'ngModel' ngModel required>
+        </div>
+        
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault03">trainer name</label>
+          <input type="text" class="form-control" id="validationDefault03" name="trainerNamr" #trainerNamr = 'ngModel' ngModel required>
+        </div>j
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault04">hours</label>
+          <input type="text" class="form-control" id="validationDefault04" name="courseHours" #courseHours = 'ngModel' ngModel required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <app-upload-image ></app-upload-image>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+  </div>
+  
+<!-- <table> 
  
   <tr>
     <th>course id</th>
@@ -40,12 +79,43 @@
     <td>{{item.coursePrice}}</td>
     <td>{{item.descripation}}</td>
     <td><a  routerLink = '/corUpdate/{{item.id}}'
-      (click)="btnUpdateCourse(corItem,courseId.value,courseUserId.value,courseName.value,courseDes.value)">update
+      (click)="btnUpdateCourse(addForm.value)">update
     </a>
     </td>
     <td><button  title="delete course"
-      (click)="btnDeleteCourse(item)">x</button></td> 
+      (click)="btnDeleteCourse(item.id)">x</button></td> 
   </tr>
   
 
+</table> -->
+
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Course name</th>
+      <th scope="col">course  price</th>
+      <th scope="col">Course descipation</th>
+      <th scope="col">trainer name</th>
+      <th scope="col">course hourly</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let item of arrayOfCourse'>
+      <td>{{item.coursename}}</td>
+      <td>{{item.coursePrice}}</td>
+      <td>{{item.descripation}}</td>
+      <td>{{item.trainerNamr}}</td>
+      <td>{{item.courseHours}}</td>
+      <td><a  routerLink = '/corUpdate/{{item.id}}'
+        (click)="btnUpdateCourse(addForm.value)">update
+      </a>
+      </td>
+      <td><button  title="delete course"
+        (click)="btnDeleteCourse(item.id)">x</button></td> 
+    </tr>
+  </tbody>
 </table>
+

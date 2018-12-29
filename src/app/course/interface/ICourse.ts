@@ -4,4 +4,6 @@ export interface ICourse {
     coursePrice : number	
     descripation : string
     trainerName : string
+    courseHours : number
+    imageUrl : string
 }

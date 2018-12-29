@@ -1,22 +1,63 @@
 <h1>course Update</h1>
 <div *ngIf ='cor'> 
   <span>{{cor.id}}</span>
-  <span>{{cor.title}}</span>
-  <div> 
-     <label>
-          id:
-      </label>
-      <input type="text" ngModel ="cor.id"/>
-      <label>userId:</label>
-      <input type="text" ngModel ="cor.userId"/>
-      <label>CourseName:</label>
-      <input type="text" ngModel ="cor.title"/> 
-      <label>descripation:</label>
-      <input type="text" ngModel ="cor.body"/> 
+  <span>{{cor.coursename}}</span>
+  <div>
+      <form #updateForm = "ngForm" (ngSubmit) = "save(updateForm)">
+          <div class="form-row" >
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01">Course name</label>
+              <input type="text" class="form-control" id="validationDefault01"
+               [(ngModel)] = 'cor.coursename' name="coursename" #coursename= 'ngModel'  ngModel required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault02">Course price</label>
+              <input type="text" class="form-control" id="validationDefault02" 
+               [(ngModel)] = 'cor.coursePrice' name="coursePrice" #coursePrice = 'ngModel' ngModel  required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault02">descripation</label>
+              <input type="text" class="form-control" id="validationDefault02"
+               [(ngModel)] = 'cor.descripation' name="descripation" #descripation = 'ngModel' ngModel  required>
+            </div>
+            
+          </div>
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault03">trainer name</label>
+              <input type="text" class="form-control" id="validationDefault03"
+               [(ngModel)] = 'cor.trainerNamr' name="trainerNamr" #trainerNamr = 'ngModel' ngModel  required>
+            </div>j
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault04">hours</label>
+              <input type="text" class="form-control" id="validationDefault04" name="courseHours"
+               [(ngModel)] = 'cor.courseHours' #courseHours = 'ngModel'  required>
+            </div>
+            
+          </div>
+          
+          <button class="btn btn-primary" type="submit">save</button>
+        </form>
+      <!-- <form #updateForm = "ngForm" (ngSubmit) = "save(updateForm)">
+          <label>
+            id:
+          </label>
+          <input type="text" name="id" #id='ngModel' ngModel/>
+          <label>userId:</label>
+          <input type="text" name="coursename" #coursename= 'ngModel' ngModel/>
+          <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.required'>u have to fill the name</span> -->
+          <!-- <span *ngIf = 'addFrom.submitted && coursename.errors.minlength'>the name must be grater than 10</span> -->
+          <!-- <label>CourseName:</label>
+          <input type="text" name="coursePrice" #coursePrice='ngModel' ngModel/> 
+          <label>descripation:</label>
+          <input type="text" name="descripation" #coursePrice='ngModel' ngModel/>
+          <button type="submit">update</button> 
+        </form> -->
+      
   </div>
-  <button (click) = 'save()'>save</button>
-  <button (click) = 'goBack()'>goBack</button> 
-
+  <!-- <button (click) = 'save()'>save</button> -->
+  <!-- <button class="btn btn-primary" (click) = 'goBack()'>goBack</button>  -->
+  
    
 </div>
 

@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class CourseService {
   
-  courseUrl =' http://localhost:5000/Coursearray';
+  courseUrl ='http://localhost:3000/Coursearray';
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +31,7 @@ export class CourseService {
     return this.http.delete<ICourse[]>(`${this.courseUrl}/${id}`)
   }
 
-  updateCourse (courseItem:  ICourse){
-    return this.http.put<ICourse>(this.courseUrl, courseItem)
+  updateCourse(id,courseItem:  ICourse):Observable<ICourse[]>{
+    return this.http.put<ICourse[]>(`${this.courseUrl}/${id}`, courseItem)
   }
 }

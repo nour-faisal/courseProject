@@ -1,0 +1,56 @@
+<!-- 
+ <div class="row"> 
+    <div >
+        <h1 class="col-12">the Best Teacher</h1>
+        <div class="col-12 col-md-4 col-lg-3 box-teach" *ngFor = 'let item of arrayTeach'> 
+          <div class="single-popular-course mb-100 ">
+              <img src="{{item.imgsrc}}" alt="">
+                <div class="course-content">
+                  <h4>{{item.name}}</h4>
+                  
+                  <p>{{item.des}}</p>
+              </div>
+             
+              
+          </div>
+    </div>  
+      
+    </div>
+   
+</div> 
+  
+ -->
+
+
+ <section class="popular-courses-area section-padding-100-0" style="background-image: url(img/core-img/texture.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>The best Teacher</h3>
+                </div>
+            </div>
+        </div>
+  
+        <div class="row">
+            <!-- Single Popular Course -->
+            <div  class="col-12 col-md-6 col-lg-4 box-course box-tech" *ngFor = 'let item of arrayTeach'>
+                <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms">
+                    <img class="img-tech" src="{{item.imgsrc}}" alt="">
+                    <!-- Course Content -->
+                    <div class="course-content">
+                        <h4>{{item.name}}</h4>
+                        
+                        <p>{{item.work}}</p>
+                        <p>{{item.des}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+  
+            
+  
+            
+        </div>
+    </div>
+  </section>

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.no-style .ng-valid {
+    border-left: 1px  solid #CCC
+  }
+  
+    .no-style .ng-invalid {
+    border-left: 1px  solid #CCC
+  }

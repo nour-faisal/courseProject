@@ -1,10 +1,55 @@
 {
   "Coursearray": [
     {
-      "id": "2",
-      "coursename": "4",
-      "coursePrice": "66666",
-      "descripation": "777"
+      "coursename": "Laravel php",
+      "coursePrice": "40",
+      "descripation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+      "trainerNamr": "Ahmed",
+      "courseHours": "60",
+      "id": 1
+    },
+    {
+      "coursename": "Angular 7",
+      "coursePrice": "30",
+      "descripation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+      "trainerNamr":  "nour",
+      "courseHours": "10",
+      "id": 2
+    },
+    {
+      "coursename": "English Grammer",
+      "coursePrice": "40",
+      "descripation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+      "trainerNamr":  "Ali",
+      "courseHours": "10",
+      "id": 3
     }
+    
+  ],
+  "Teacher": [
+    {
+      "name": "nour",
+      "work":"reacher",
+      "imgsrc": "assets/img/t1.png",
+      "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+      "id": 1
+    },
+    {
+      "name": "sarah",
+      "work":"reacher",
+      "imgsrc": "assets/img/t2.png",
+      "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+
+      "id": 2
+    },
+    {
+      "name": "Ahmed",
+      "work":"reacher",
+      "imgsrc": "assets/img/t3.png",
+      "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.",
+
+      "id": 3
+    }
+    
   ]
 }

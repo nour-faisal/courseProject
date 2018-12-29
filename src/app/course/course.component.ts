@@ -1,24 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {CourseService} from '../course.service'
+import { ActivatedRoute, Router } from '@angular/router';
 import {ICourse} from '../course/interface/ICourse';
 
-import { Identifiers } from '@angular/compiler';
+
+
+import { FormGroup, FormControlName, Validators, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-  cor : ICourse;
-  arrayOfCourse : ICourse[];
+  
+  @Input () arrayOfCourse : ICourse[];
 
-  constructor(private course: CourseService) { }
-
+  constructor(private course: CourseService, private route: ActivatedRoute, private router: Router) { }
+   myForm ;
+   cor : ICourse;
+   submitted = false;
   ngOnInit() {
     // this.proService.getProdcuts().subscribe(pro => this.dataProduct=pro)
     this.course.getCourse().subscribe(elecourse => this.arrayOfCourse = elecourse);
   }
-  nameErrors = null;
+  
 
   btnAddcourse(myForm): void {
     
@@ -30,10 +35,17 @@ export class CourseComponent implements OnInit {
 
   }
   
-  btnDeleteCourse(cor: ICourse){
+  btnDeleteCourse(id: ICourse){
     
-    this.course.deleteCourse(cor).subscribe(res=>this.course.getCourse());
+    this.course.deleteCourse(id).subscribe(res=> this.router.navigate(['/course']));
   }
+
+  btnUpdateCourse(id,myForm){
+    this.course.updateCourse(id,myForm.value).subscribe(resup => {
+      this.arrayOfCourse.push();
+
+   })
+}
   
 
 }

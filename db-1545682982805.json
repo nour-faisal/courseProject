@@ -1,0 +1,13 @@
+{
+  "Coursearray": [
+    {
+      "id": 1,
+      "coursename": "angular7",
+      "coursePrice": "20",
+      "descripation": "this is angular 7",
+      "imageCourse": "",
+      "trainerName": "Ali",
+      "hours": 50
+    }
+  ]
+}
